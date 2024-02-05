@@ -243,7 +243,7 @@
 
         - name: set fact for config object
           set_fact:
-            config: "{{ _objects.json.saved_objects[0] }}"
+            config: "{{ q.json.saved_objects[0] }}"
 
         - name: Set default index
           uri:
