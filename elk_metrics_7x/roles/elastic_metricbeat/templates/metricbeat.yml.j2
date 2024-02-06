@@ -58,8 +58,8 @@ metricbeat.max_start_delay: 10s
 #==========================  Modules configuration =============================
 {% set metric_sets = ['network', 'process', 'process_summary', 'uptime', 'service'] %}
 {% if physical_host is defined and physical_host != inventory_hostname %}
-{%   set host_mount_devices = (hostvars[physical_host]['ansible_mounts'] | map(attribute='device') | list) %}
-{%   set container_mount_devices = (ansible_mounts | map(attribute='device') | list) %}
+{%   set host_mount_devices = (hostvars[physical_host]['ansible_facts']['mounts'] | map(attribute='device') | list) %}
+{%   set container_mount_devices = (ansible_facts['mounts'] | map(attribute='device') | list) %}
 {%   if (((container_mount_devices | difference(host_mount_devices)) | length) > 0) | bool %}
 {%     set _ = metric_sets.extend(['filesystem', 'fsstat']) %}
 {%   endif %}
