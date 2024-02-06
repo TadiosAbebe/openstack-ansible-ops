@@ -223,15 +223,6 @@ required library.
     pip install osprofiler
 
 
-Optional | run the haproxy-install playbook
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    cd /opt/openstack-ansible/playbooks/
-    openstack-ansible haproxy-install.yml --tags=haproxy-service-config
-
-
 Setup | system configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -269,6 +260,15 @@ Create the containers
 
    cd /opt/openstack-ansible/playbooks
    openstack-ansible lxc-containers-create.yml --limit elk_all
+
+
+Optional | run the haproxy-install playbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    cd /opt/openstack-ansible/playbooks/
+    openstack-ansible haproxy-install.yml --tags=haproxy-service-config
 
 
 Deploying | Installing with embedded Ansible
