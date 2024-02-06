@@ -51,7 +51,7 @@ Configure the Elasticsearch endpoints:
       - service:
           haproxy_service_name: elastic-logstash
           haproxy_ssl: False
-          haproxy_backend_nodes: "{{ groups['Kibana'] | default([]) }}"  # Kibana nodes are also Elasticsearch coordination nodes
+          haproxy_backend_nodes: "{{ groups['kibana'] | default([]) }}"  # Kibana nodes are also Elasticsearch coordination nodes
           haproxy_port: 9201  # This is set using the "elastic_hap_port" variable
           haproxy_check_port: 9200  # This is set using the "elastic_port" variable
           haproxy_backend_port: 9200  # This is set using the "elastic_port" variable
@@ -73,7 +73,7 @@ Configure the Kibana endpoints:
       - service:
           haproxy_service_name: Kibana
           haproxy_ssl: False
-          haproxy_backend_nodes: "{{ groups['Kibana'] | default([]) }}"
+          haproxy_backend_nodes: "{{ groups['kibana'] | default([]) }}"
           haproxy_port: 81  # This is set using the "Kibana_nginx_port" variable
           haproxy_balance_type: tcp
 
