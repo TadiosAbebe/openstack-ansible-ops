@@ -231,7 +231,7 @@ Clone the elk-osa repo
 .. code-block:: bash
 
     cd /opt
-    git clone https://github.com/openstack/openstack-ansible-ops
+    git clone https://github.com/TadiosAbebe/openstack-ansible-ops.git
 
 Copy the env.d file into place
 
