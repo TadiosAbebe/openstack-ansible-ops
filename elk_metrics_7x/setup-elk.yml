@@ -1,0 +1,5 @@
+- import_playbook: installElastic.yml
+- import_playbook: installLogstash.yml
+- import_playbook: installKibana.yml
+- import_playbook: installJournalbeat.yml
+- import_playbook: installMetricbeat.yml
