@@ -33,23 +33,23 @@ elastic_vip_url: "http://127.0.0.1:19200"
 
 # Beat options
 heartbeat_services:
-  - group: "{{ groups['galera_all'] | default([]) }}"
-    name: galera
-    ports:
-      - 9200
-    type: http
-    method: HEAD
-    path: "/"
+#  - group: "{{ groups['galera_all'] | default([]) }}"
+#    name: galera
+#    ports:
+#      - 9200
+#    type: http
+#    method: HEAD
+#    path: "/"
   - group: "{{ groups['galera_all'] | default([]) }}"
     name: galera
     ports:
       - 3306
     type: tcp
-  - group: "{{ groups['repo_all'] | default([]) }}"
-    name: repo-git
-    ports:
-      - 9418
-    type: tcp
+#  - group: "{{ groups['repo_all'] | default([]) }}"
+#    name: repo-git
+#    ports:
+#      - 9418
+#    type: tcp
   - group: "{{ groups['repo_all'] | default([]) }}"
     name: repo-server
     ports:
@@ -57,13 +57,13 @@ heartbeat_services:
     type: http
     method: HEAD
     path: "/"
-  - group: "{{ groups['repo_all'] | default([]) }}"
-    name: repo-acng
-    ports:
-      - 3142
-    type: http
-    method: HEAD
-    path: "/acng-report.html"
+#  - group: "{{ groups['repo_all'] | default([]) }}"
+#    name: repo-acng
+#    ports:
+#      - 3142
+#    type: http
+#    method: HEAD
+#    path: "/acng-report.html"
   - group: "{{ groups['glance_api'] | default([]) }}"
     name: glance-api
     ports:
@@ -71,13 +71,13 @@ heartbeat_services:
     type: http
     method: HEAD
     path: "/healthcheck"
-  - group: "{{ groups['glance_api'] | default([]) }}"
-    name: glance-registry
-    ports:
-      - 9191
-    type: http
-    method: HEAD
-    path: "/healthcheck"
+  #- group: "{{ groups['glance_api'] | default([]) }}"
+  #  name: glance-registry
+  #  ports:
+  #    - 9191
+  #  type: http
+  #  method: HEAD
+  #  path: "/healthcheck"
   - group: "{{ groups['gnocchi_all'] | default([]) }}"
     name: gnocchi-api
     ports:
@@ -140,13 +140,13 @@ heartbeat_services:
     type: http
     method: GET
     path: "/"
-  - group: "{{ groups['nova_console'] | default([]) }}"
-    name: nova-console
-    ports:
-      - 6080
-      - 6082
-      - 6083
-    type: tcp
+ # - group: "{{ groups['nova_console'] | default([]) }}"
+ #   name: nova-console
+ #   ports:
+ #     - 6080
+ #     - 6082
+ #     - 6083
+ #   type: tcp
   - group: "{{ groups['cinder_api'] | default([]) }}"
     name: cinder-api
     ports:
@@ -195,8 +195,8 @@ heartbeat_services:
   - group: "{{ groups['rabbitmq_all'] | default([]) }}"
     name: rabbitmq-management
     ports:
-      - 15672
-    type: http
+      - 15671
+    type: https
     method: HEAD
     path: "/"
   - group: "{{ groups['rabbitmq_all'] | default([]) }}"
@@ -247,19 +247,19 @@ heartbeat_services:
     type: http
     method: HEAD
     path: "/"
-  - group: "{{ groups['neutron_server'] | default([]) }}"
-    name: opendaylight
-    ports:
-      - 8180
-      - 8185
-    type: tcp
-  - group: "{{ groups['neutron_server'] | default([]) }}"
-    name: ceph-rgw
-    ports:
-      - 7980
-    type: http
-    method: HEAD
-    path: "/"
+#  - group: "{{ groups['neutron_server'] | default([]) }}"
+#    name: opendaylight
+#    ports:
+#      - 8180
+#      - 8185
+#    type: tcp
+#  - group: "{{ groups['neutron_server'] | default([]) }}"
+#    name: ceph-rgw
+#    ports:
+#      - 7980
+#    type: http
+#    method: HEAD
+#    path: "/"
 
 # Grafana
 grafana_dashboards:
